@@ -1,0 +1,6 @@
+site_name: My Library
+theme: readthedocs
+nav:
+    - Home: index.md
+    - Overview: overview.md
+    - Main Function: main_function.md

@@ -1,0 +1,38 @@
+[tool.poetry]
+name = "my-lilbarary"
+version = "0.1.0"
+description = "my-library-algorithm"
+authors = ["Paraboly <dev@paraboly.com>"]
+license = "Paraboly"
+readme = "README.md"
+packages = [{ include = "my-library" }]
+include = ["*.so", "*.py", "*.marshal"]
+
+[tool.poetry.scripts]
+lint = "scripts.lint:main"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.14"
+cython = "^3.0.11"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.2"
+mkdocs = "^1.6.0"
+pyinstaller = "^6.10.0"
+flake8 = "^7.1.1"
+pytest-cov = "^5.0.0"
+flake8-pyproject = "^1.2.3"
+cython = "^3.0.11"
+setuptools = "^65.5.1"
+wheel = "^0.41.2"
+
+[tool.poetry.build]
+generate-setup-file = true
+
+[build-system]
+requires = ["setuptools", "wheel", "Cython"]
+build-backend = "setuptools.build_meta"
+
+[tool.flake8]
+max-line-length = 88
+ignore = ["E203", "E266", "E501", "W503"]
